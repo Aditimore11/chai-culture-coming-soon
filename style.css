@@ -1,0 +1,172 @@
+body {
+    font-family: 'Playfair Display', serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #D4AF37 0%, #8B4513 50%, #F5F5DC 100%), url('spice-pattern.png') repeat;
+    background-size: cover;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    overflow-x: hidden;
+    position: relative;
+}
+#particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+.container {
+    max-width: 650px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+    animation: fadeInUp 1.2s ease-out;
+    position: relative;
+    border: 2px solid transparent;
+    background-clip: padding-box;
+}
+.container::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: linear-gradient(45deg, #D4AF37, #8B4513, #D4AF37);
+    border-radius: 25px;
+    z-index: -1;
+    opacity: 0.2;
+    animation: shimmer 4s ease-in-out infinite;
+}
+@keyframes shimmer {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 0.4; }
+}
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.logo {
+    width: 180px;
+    height: auto;
+    margin-bottom: 30px;
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    margin: 10px 0;
+    color: #8B4513;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(45deg, #8B4513, #D4AF37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.tagline {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-style: italic;
+    color: #D4AF37;
+    margin-bottom: 25px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.description {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 35px;
+    color: #555;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.launching-soon {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #8B4513;
+    margin-bottom: 35px;
+    animation: glow 2s ease-in-out infinite alternate;
+    display: inline-block;
+    border-bottom: 2px solid #D4AF37;
+    padding-bottom: 5px;
+}
+@keyframes glow {
+    from { text-shadow: 0 0 5px #D4AF37; }
+    to { text-shadow: 0 0 20px #D4AF37, 0 0 30px #D4AF37; }
+}
+.signup {
+    margin-bottom: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.signup input {
+    padding: 12px 15px;
+    width: 100%;
+    max-width: 320px;
+    border: 2px solid #D4AF37;
+    border-radius: 25px;
+    font-size: 1rem;
+    font-family: 'Playfair Display', serif;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.8);
+    margin-bottom: 15px;
+}
+.signup input:focus {
+    outline: none;
+    border-color: #8B4513;
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+.signup button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #8B4513, #A0522D);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-family: 'Cinzel', serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.signup button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+.social-icons {
+    margin-top: 35px;
+}
+.social-icons a {
+    color: #8B4513;
+    font-size: 1.8rem;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+.social-icons a:hover {
+    color: #D4AF37;
+    transform: scale(1.2) rotate(5deg);
+}
+@media (max-width: 768px) {
+    .container { padding: 30px 20px; }
+    h1 { font-size: 2.5rem; }
+    .tagline { font-size: 1.5rem; }
+    .description { font-size: 1rem; }
+    .signup input { width: 90%; }
+    .signup button { width: 90%; max-width: 320px; }
+    .social-icons a { margin: 0 10px; }
+}
